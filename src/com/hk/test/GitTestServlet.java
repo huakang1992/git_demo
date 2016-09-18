@@ -40,10 +40,8 @@ public class GitTestServlet extends HttpServlet {
 		ServletContext context = request.getServletContext();
 		String helloworld = (String)context.getInitParameter("helloworld");
 		System.out.println("12345667899" + helloworld);
-		List<String> list = Content.cityList;
-		for (int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i)+"hello");
-		}
+		request.setAttribute("java", "hello java!");
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
 	/**
